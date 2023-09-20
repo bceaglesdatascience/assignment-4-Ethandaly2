@@ -1,12 +1,12 @@
 purchases = int(input("Number of purchases: "))
 tax_percent = float(input("Sales tax: "))
-tax = tax_percent / 100  
+tax = tax_percent   
 
 customers = []
 items = []
 
 for i in range(purchases):
-    name = input("Enter name of customer: ")
+    name = input("Customer: ")
     item = float(input("Cost: "))
     customers.append(name)
     items.append(item)
@@ -24,6 +24,6 @@ total_purchases = {}
 for i in range(purchases):
     if customers[i] not in total_purchases:
         total_purchases[customers[i]] = 0
-    total_purchases[customers[i]] += taxed_prices[i]
+    total_purchases[customers[i]] += round(taxed_prices[i], 2)
 
 print(total_purchases)
